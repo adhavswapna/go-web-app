@@ -1,0 +1,12 @@
+# Go build artifacts
+main
+*.exe
+*.out
+*.test
+
+# Archives
+*.tar
+*.tar.gz
+
+# GitHub runner
+actions-runner/

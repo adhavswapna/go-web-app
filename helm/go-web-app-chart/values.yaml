@@ -1,0 +1,36 @@
+# Default values for go-web-app.
+
+replicaCount: 1
+
+image:
+  repository: go-web-app    # Replace with your Docker image name if pushing to a registry
+  pullPolicy: IfNotPresent
+  tag: v1
+
+service:
+  type: NodePort           # NodePort so we can access from Windows / local
+  port: 80                 # Service port inside cluster
+  nodePort: 30080          # Port on your local machine
+  targetPort: 8080         # Container port your Go app listens on
+
+ingress:
+  enabled: false           # For local dev, no ingress needed
+  hosts:
+    - host: go-web-app.local
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+  tls: []
+
+resources: {}
+# You can limit CPU/memory if needed
+# limits:
+#   cpu: 100m
+#   memory: 128Mi
+# requests:
+#   cpu: 50m
+#   memory: 64Mi
+
+nodeSelector: {}
+tolerations: []
+affinity: []
