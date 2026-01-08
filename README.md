@@ -83,15 +83,13 @@ curl -sfL https://get.k3s.io | sh -
 
 Verify:
 
-kubectl get nodes
+kubectl get nodes -o wide
 
 
 k3s includes:
 
 Traefik (Ingress)
-
 Containerd
-
 ServiceLB
 
 🧑‍💻 GitHub Actions – Self-Hosted Runner
