@@ -150,6 +150,7 @@ Upgrade:
 
 helm upgrade go-web-app ./helm/go-web-app-chart
 
+
 🔄 Argo CD Installation (GitOps)
 1️⃣ Create namespace
 kubectl create namespace argocd
@@ -163,31 +164,26 @@ Wait:
 
 kubectl get pods -n argocd
 
-3️⃣ Access Argo CD UI (k3s / local)
-kubectl port-forward svc/argocd-server -n argocd 8080:443
 
+copy internal ip :
+kubectl get svc -n argocd
+copy port
 
 Open:
 
-https://localhost:8080
+[http://NodePortIP/port]
 
 
 Username:
-
 admin
-
 
 Password:
 
 kubectl get secret argocd-initial-admin-secret -n argocd \
   -o jsonpath="{.data.password}" | base64 -d && echo
 
-📘 Create Argo CD Application
-argocd app create go-web-app \
-  --repo https://github.com/adhavswapna/go-web-app.git \
-  --path helm/go-web-app-chart \
-  --dest-server https://kubernetes.default.svc \
-  --dest-namespace default
+
+
 
 
 Sync:
