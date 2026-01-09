@@ -5,7 +5,7 @@ replicaCount: 1
 image:
   repository: go-web-app    # Replace with your Docker image name if pushing to a registry
   pullPolicy: IfNotPresent
-  tag: "20785114742"
+  tag: "20857853996"
 
 service:
   type: NodePort           # NodePort so we can access from Windows / local
