@@ -224,6 +224,12 @@ Add to /etc/hosts:
 
 127.0.0.1 go-web-app.local
 
+kubectl get ingress -n default
+
+NAME         CLASS     HOSTS              ADDRESS   PORTS   AGE
+go-web-app   traefik   go-web-app.local             80      46m
+
+
 
 kubectl get svc -n default
 
