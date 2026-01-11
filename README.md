@@ -25,13 +25,13 @@ Docker
 
 Helm
 
-GitHub Actions (Self-Hosted Runner)
+GitHub Actions 
 
 Argo CD (GitOps)
 
 This repository demonstrates a real-world DevOps workflow:
 
-Code → CI (Self-Hosted Runner) → Docker Image Build → GitOps → Argo CD Sync → Kubernetes
+Code → CI → Docker Image Build → GitOps → Argo CD Sync → Kubernetes
 
 
 🧰 Tech Stack
@@ -46,7 +46,7 @@ Helm: Application packaging
 
 GitOps CD: Argo CD
 
-CI/CD: GitHub Actions (Self-Hosted Runner)
+CI/CD: GitHub Actions
 
 Ingress: Traefik (default with k3s)
 
@@ -224,6 +224,11 @@ Add to /etc/hosts:
 
 127.0.0.1 go-web-app.local
 
+
+kubectl get svc -n default
+
+Paste go-web-app.local:NodePort(port) on browser to check an application is working
+
 🔐 Security Notes
 
 Use GitHub Secrets for Docker registry credentials
@@ -236,7 +241,7 @@ Restrict Argo CD admin access
 
 Push code to GitHub
 
-GitHub Actions (Self-Hosted Runner) builds Docker image
+GitHub Actions builds Docker image
 
 Helm chart values updated
 
